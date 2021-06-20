@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>BoxOffice | {{movies.movie_name}}</title>
+{% endblock %}
+
+<body>
+  {% block content %}
+    <div class="card " style="width: 18rem; margin: auto; margin-top: 10%; border: 2px solid;">
+      <img src="{{movies.movie_poster}}" alt="Movie Poster" style="width: 100%;">
+        <div class="card-body">
+          <h2 class="card-title" style="margin-top: 0 ; text-align: center;">{{movies.movie_name}}</h2>
+          <h3 class="card-subtitle  text-muted" style="margin-top: 0 ; text-align: center;"> price for one month</h3>
+          <p class="card-text" style="margin-top: 0 ; text-align: center;">{{movies.movie_des}}</p>
+
+          <input type="button" id="btn-o" class="btn btn-info" style="margin-left: 80px; margin-bottom: 5px;" value="Purchase" >
+        </div>
+      </div>
+ 
+
+<!-- Modal for time online watch-->
+<div class="modal fade" id="online" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title"> Watch Online </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="container-fluid">
+
+
+                  Booking Ticket generation
+
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block JQuery %}
+
+<script>
+    
+
+    $('#btn-o').click(function () {
+        $('#online').modal('toggle')
+    });
+</script>
+
+{% endblock %}
